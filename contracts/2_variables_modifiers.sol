@@ -30,9 +30,14 @@ contract VariablesModifiers {
     bytes32 second_bytes;
     bytes1 byte_1;
 
-    // Algoritmo de hash
+    // Algoritmos de hashing
+    // next functions use to compute hash algorithm of the input
     // la funcion "keccak256" es la funcion de hash utilizado en ETH
-    bytes32 public hasing = keccak256(abi.encode("hola mundo"));
+    bytes32 public hasing_keccak256 = keccak256(abi.encodePacked("hola mundo", uint8(10)));
+    bytes32 public hasing_keccak256_address = keccak256(abi.encodePacked(0x5B38Da6a701c568545dCfcB03FcB875f56beddC4));
+    bytes32 public hasing_sha256 = sha256(abi.encodePacked("hola mundo", uint8(10)));
+    bytes20 public hasing_ripemd160 = ripemd160(abi.encodePacked("hola mundo"));
+
 
     // Variables de tipo address
     address my_address;
