@@ -23,10 +23,7 @@ contract Hamburguer is Food {
 
     // modifier
     modifier ownerOnly() {
-        require(
-            owner == msg.sender,
-            "you have not permission to run this function"
-        );
+        require(owner == msg.sender,"you have not permission to run this function");
         _;
     }
 
@@ -36,10 +33,7 @@ contract Hamburguer is Food {
     }
 
     // function call to functions that heritage of father contract
-    function doHamburger(
-        string memory ingredients_,
-        uint limithamburguer_
-    ) external ownerOnly {
+    function doHamburger(string memory ingredients_,uint limithamburguer_) external ownerOnly {
         require(limithamburguer_ < 5, "max 5 hambuguers");
         newMenu("Hamburguer", ingredients_);
     }
